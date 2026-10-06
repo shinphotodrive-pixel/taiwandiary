@@ -1,10 +1,14 @@
 import { TaiwanDelicacy, Companion, DiaryEntryData } from '../types/diary';
+import heroJournalImg from '../assets/images/antique_taipei_journal_hero_1791322889374.jpg';
+import foodSketchImg from '../assets/images/antique_taiwan_treats_sketch_1791322901305.jpg';
+import travelersPortraitImg from '../assets/images/antique_travelers_portrait_1791322913984.jpg';
+import nightViewImg from '../assets/images/antique_taipei_night_view_1791322928012.jpg';
 
 export const DIARY_IMAGES = {
-  heroJournal: '/src/assets/images/antique_taipei_journal_hero_1791322889374.jpg',
-  foodSketch: '/src/assets/images/antique_taiwan_treats_sketch_1791322901305.jpg',
-  travelersPortrait: '/src/assets/images/antique_travelers_portrait_1791322913984.jpg',
-  nightView: '/src/assets/images/antique_taipei_night_view_1791322928012.jpg',
+  heroJournal: heroJournalImg || '/assets/images/antique_taipei_journal_hero_1791322889374.jpg',
+  foodSketch: foodSketchImg || '/assets/images/antique_taiwan_treats_sketch_1791322901305.jpg',
+  travelersPortrait: travelersPortraitImg || '/assets/images/antique_travelers_portrait_1791322913984.jpg',
+  nightView: nightViewImg || '/assets/images/antique_taipei_night_view_1791322928012.jpg',
 };
 
 export const INITIAL_DIARY: DiaryEntryData = {
