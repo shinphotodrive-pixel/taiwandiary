@@ -1,0 +1,6 @@
+{
+  "name": "앤틱 타이베이 그림일기 아카이브 (Antique Taiwan Travel Diary)",
+  "description": "어린 시절의 소중한 대만 여행 그림일기를 19세기 앤틱 양장본 저널과 고서 삽화로 재해석한 감성 아카이브 애플리케이션",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

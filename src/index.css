@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Gowun Batang', serif;
+    background-color: #16120e;
+    color: #ede2d1;
+  }
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-garamond {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-batang {
+  font-family: 'Gowun Batang', serif;
+}
+
+.font-pen {
+  font-family: 'Nanum Pen Script', cursive;
+}
+
+/* Antique parchment textures */
+.bg-parchment {
+  background-color: #f7f1e3;
+  background-image: 
+    radial-gradient(#ebdcc4 15%, transparent 16%),
+    radial-gradient(#ebdcc4 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+.bg-parchment-warm {
+  background: radial-gradient(ellipse at center, #faf4e6 0%, #f1e4ce 70%, #e2d2b5 100%);
+}
+
+.bg-dark-parchment {
+  background: radial-gradient(ellipse at center, #241d18 0%, #1c1612 70%, #140f0c 100%);
+}
+
+/* Custom antique scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c1713;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #47382c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #685341;
+}
