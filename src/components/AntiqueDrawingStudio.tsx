@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { vintageAudio } from '../utils/audio';
+import { VintagePostageStamp } from './VintagePostageStamp';
 import {
   PenTool,
   Eraser,
@@ -229,7 +230,7 @@ export const AntiqueDrawingStudio: React.FC = () => {
           </p>
         </div>
 
-        {/* Action Controls */}
+        {/* Action Controls & Stamp */}
         <div className="flex items-center gap-2">
           <button
             onClick={clearCanvas}
@@ -254,6 +255,7 @@ export const AntiqueDrawingStudio: React.FC = () => {
               </>
             )}
           </button>
+          <VintagePostageStamp size="sm" variant="gold" postmarkDate="10.02" denomination="1 SEN" label="圖畵 郵便" rotate="rotate-[3deg]" className="hidden sm:inline-block" />
         </div>
       </div>
 

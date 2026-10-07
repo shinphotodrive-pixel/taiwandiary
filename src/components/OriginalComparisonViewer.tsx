@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { DIARY_IMAGES, INITIAL_DIARY, TAIWAN_DELICACIES } from '../data/diaryData';
 import { vintageAudio } from '../utils/audio';
+import { VintagePostageStamp } from './VintagePostageStamp';
 import { SplitSquareVertical, Sliders, CheckCircle2, Info, Compass } from 'lucide-react';
 
 export const OriginalComparisonViewer: React.FC = () => {
@@ -53,17 +54,22 @@ export const OriginalComparisonViewer: React.FC = () => {
   return (
     <div className="w-full flex flex-col gap-4 sm:gap-6 pb-20 sm:pb-6">
       {/* Intro Header */}
-      <div className="border-b border-[#8c704f]/40 pb-3 sm:pb-4">
-        <div className="flex items-center gap-2 text-xs font-garamond uppercase tracking-widest text-[#9e4624]">
-          <Compass className="w-3.5 h-3.5" />
-          <span>Comparative Archival Study · Original Sketch vs. Antique Illuminated Page</span>
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#8c704f]/40 pb-3 sm:pb-4">
+        <div>
+          <div className="flex items-center gap-2 text-xs font-garamond uppercase tracking-widest text-[#9e4624]">
+            <Compass className="w-3.5 h-3.5" />
+            <span>Comparative Archival Study · Original Sketch vs. Antique Illuminated Page</span>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-batang font-bold text-[#f7ecd7] mt-1">
+            원본 연필 스케치 vs 앤틱 고서 아카이브 비교 분석
+          </h2>
+          <p className="text-sm font-batang text-[#c5ad93] mt-1 max-w-2xl leading-relaxed">
+            어린 날의 순수한 연필선 속에 담긴 타이베이의 풍경과 감정을 19세기 양장본 도감의 섬세한 기법으로 복원한 대비 뷰어입니다. 슬라이더를 움직여 감상해 보세요.
+          </p>
         </div>
-        <h2 className="text-2xl md:text-3xl font-batang font-bold text-[#351e0e] mt-1">
-          원본 연필 스케치 vs 앤틱 고서 아카이브 비교 분석
-        </h2>
-        <p className="text-sm font-batang text-[#6b523e] mt-1 max-w-2xl leading-relaxed">
-          어린 날의 순수한 연필선 속에 담긴 타이베이의 풍경과 감정을 19세기 양장본 도감의 섬세한 기법으로 복원한 대비 뷰어입니다. 슬라이더를 움직여 감상해 보세요.
-        </p>
+        <div className="shrink-0">
+          <VintagePostageStamp size="sm" variant="sepia" postmarkDate="1888" denomination="5 SEN" label="筆錄 郵便" rotate="rotate-[-2deg]" className="hidden sm:inline-block" />
+        </div>
       </div>
 
       {/* Interactive Split Slider Viewer */}

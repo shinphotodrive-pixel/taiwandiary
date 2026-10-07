@@ -4,6 +4,7 @@ import { TaiwanDelicacy, Companion } from '../types/diary';
 import { AntiqueClock } from './AntiqueClock';
 import { ManuscriptGrid } from './ManuscriptGrid';
 import { InteractiveSketchBoard } from './InteractiveSketchBoard';
+import { VintagePostageStamp } from './VintagePostageStamp';
 import { vintageAudio } from '../utils/audio';
 import { Sun, Cloud, CloudRain, Snowflake, Feather, Sparkles, Heart, BookOpen, PenTool, LayoutGrid } from 'lucide-react';
 
@@ -115,7 +116,10 @@ export const AntiqueJournalPage: React.FC<AntiqueJournalPageProps> = ({
                 <span className="w-1.5 h-1.5 rounded-full bg-[#8c3519]" />
                 <span className="text-[11px] sm:text-xs">도화(圖畵): 대만 미식 &amp; 101 타워</span>
               </div>
-              <span className="font-garamond italic text-[#846342] text-[11px]">Folio 14</span>
+              <div className="flex items-center gap-2">
+                <span className="font-garamond italic text-[#846342] text-[11px]">Folio 14</span>
+                <VintagePostageStamp size="sm" variant="red" postmarkDate="OCT 02" label="臺北 郵便" rotate="rotate-[3deg]" className="hidden sm:inline-block -my-2" />
+              </div>
             </div>
 
             {/* The Main Interactive Sketch Board */}
@@ -145,12 +149,21 @@ export const AntiqueJournalPage: React.FC<AntiqueJournalPageProps> = ({
                 ))}
               </div>
 
-              <button
-                onClick={() => onNavigateTab('treats')}
-                className="text-[11px] text-[#8c3519] hover:underline cursor-pointer font-bold"
-              >
-                미식 7선 도감 &rarr;
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => onNavigateTab('itinerary')}
+                  className="text-[11px] text-[#8c3519] hover:underline cursor-pointer font-bold"
+                >
+                  여행 여정록 &rarr;
+                </button>
+                <span className="text-[#a88a65]">·</span>
+                <button
+                  onClick={() => onNavigateTab('treats')}
+                  className="text-[11px] text-[#8c3519] hover:underline cursor-pointer font-bold"
+                >
+                  미식 7선 도감 &rarr;
+                </button>
+              </div>
             </div>
           </div>
 
@@ -163,7 +176,10 @@ export const AntiqueJournalPage: React.FC<AntiqueJournalPageProps> = ({
             {/* Page Header Strip: Date, Weather Seal, Clocks */}
             <div>
               <div className="flex items-center justify-between border-b border-[#bda07b]/60 pb-1.5 mb-2.5 text-xs font-batang text-[#68492c]">
-                <span className="font-garamond italic text-[#846342] text-[11px]">Folio 15</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-garamond italic text-[#846342] text-[11px]">Folio 15</span>
+                  <VintagePostageStamp size="sm" variant="sepia" postmarkDate="1888" denomination="10 SEN" label="紀念 郵便" rotate="rotate-[-4deg]" className="hidden sm:inline-block -my-2" />
+                </div>
                 <span className="font-bold text-[#8c3519] text-[11px]">10월 2일 금요일 그림일기</span>
               </div>
 
@@ -293,10 +309,10 @@ export const AntiqueJournalPage: React.FC<AntiqueJournalPageProps> = ({
               {/* Bottom Quick Navigation Links */}
               <div className="flex items-center justify-between mt-2.5 text-xs font-batang text-[#735841]">
                 <button
-                  onClick={() => onNavigateTab('comparison')}
+                  onClick={() => onNavigateTab('itinerary')}
                   className="hover:underline text-[#783617] font-medium cursor-pointer text-[11px]"
                 >
-                  &larr; 원본 스케치 비교
+                  &larr; 여행 여정록
                 </button>
                 <button
                   onClick={() => onNavigateTab('night')}

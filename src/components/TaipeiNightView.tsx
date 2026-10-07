@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { DIARY_IMAGES, TAIPEI_101_INFO } from '../data/diaryData';
 import { vintageAudio } from '../utils/audio';
+import { VintagePostageStamp } from './VintagePostageStamp';
 import { Moon, CloudRain, Volume2, VolumeX, Sparkles, Compass } from 'lucide-react';
 
 export const TaipeiNightView: React.FC = () => {
@@ -29,8 +30,8 @@ export const TaipeiNightView: React.FC = () => {
           </p>
         </div>
 
-        {/* Rain Sound Effect Toggle */}
-        <div className="flex items-center gap-2">
+        {/* Rain Sound Effect Toggle & Postage Stamp */}
+        <div className="flex items-center gap-3">
           <button
             onClick={toggleRainSound}
             className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xs text-xs font-batang transition-all cursor-pointer border ${
@@ -43,6 +44,7 @@ export const TaipeiNightView: React.FC = () => {
             <span>타이베이 밤비 소리: {rainActive ? 'ON' : 'OFF'}</span>
             {rainActive ? <Volume2 className="w-3.5 h-3.5" /> : <VolumeX className="w-3.5 h-3.5" />}
           </button>
+          <VintagePostageStamp size="sm" variant="navy" postmarkDate="10.02" denomination="10 SEN" label="夜景 郵便" rotate="rotate-[2deg]" className="hidden sm:inline-block" />
         </div>
       </div>
 

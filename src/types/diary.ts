@@ -37,3 +37,37 @@ export interface DiaryEntryData {
   fullText: string;
   reflection: string;
 }
+
+export interface MapLandmark {
+  id: string;
+  koreanName: string;
+  chineseName: string;
+  zone: string;
+  category: 'landmark' | 'food' | 'history' | 'nature';
+  antiqueDesc: string;
+  childDiaryNote: string;
+  coordinates: { x: number; y: number }; // Relative position on the antique map (%)
+  tag: string;
+}
+
+export interface ItineraryItem {
+  id: string;
+  dayNumber: number;
+  dayTitle: string;
+  dateStr: string;
+  timeStr: string;
+  locationName: string;
+  chineseName: string;
+  zone: string;
+  category: 'food' | 'landmark' | 'history' | 'night' | 'transit';
+  categoryLabel: string;
+  weather: 'rain' | 'sun' | 'cloud';
+  shortDiaryEntry: string;
+  antiqueArchivalNote: string;
+  companionMemory?: string;
+  highlightDelicacyId?: string;
+  photoStripLabel?: string;
+  iconName?: string;
+  coordinates?: { x: number; y: number };
+  isMainDiaryDay?: boolean;
+}

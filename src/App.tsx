@@ -7,11 +7,14 @@ import React, { useState } from 'react';
 import { AntiqueHeader } from './components/AntiqueHeader';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { AntiqueJournalPage } from './components/AntiqueJournalPage';
+import { TaiwanItineraryTimeline } from './components/TaiwanItineraryTimeline';
 import { TaiwanTreatsArchive } from './components/TaiwanTreatsArchive';
+import { VintageTaipeiMap } from './components/VintageTaipeiMap';
 import { OriginalComparisonViewer } from './components/OriginalComparisonViewer';
 import { AntiqueDrawingStudio } from './components/AntiqueDrawingStudio';
 import { TaipeiNightView } from './components/TaipeiNightView';
 import { AntiqueFolioModal } from './components/AntiqueFolioModal';
+import { AntiqueAudioPlayer } from './components/AntiqueAudioPlayer';
 import { TaiwanDelicacy, Companion } from './types/diary';
 import { Feather, Wifi, Battery, Signal } from 'lucide-react';
 
@@ -84,9 +87,24 @@ export default function App() {
                 />
               )}
 
+              {activeTab === 'itinerary' && (
+                <div className="bg-[#241a13] border border-[#523c28] rounded-sm p-3 shadow-md">
+                  <TaiwanItineraryTimeline
+                    onSelectDelicacy={handleSelectDelicacy}
+                    onNavigateTab={setActiveTab}
+                  />
+                </div>
+              )}
+
               {activeTab === 'treats' && (
                 <div className="bg-[#241a13] border border-[#523c28] rounded-sm p-3 shadow-md">
                   <TaiwanTreatsArchive onSelectDelicacy={handleSelectDelicacy} />
+                </div>
+              )}
+
+              {activeTab === 'map' && (
+                <div className="bg-[#241a13] border border-[#523c28] rounded-sm p-3 shadow-md">
+                  <VintageTaipeiMap onSelectDelicacy={handleSelectDelicacy} />
                 </div>
               )}
 
@@ -124,9 +142,24 @@ export default function App() {
               />
             )}
 
+            {activeTab === 'itinerary' && (
+              <div className="bg-[#241a13] border-2 border-[#523c28] rounded-sm p-3 sm:p-6 md:p-8 shadow-2xl">
+                <TaiwanItineraryTimeline
+                  onSelectDelicacy={handleSelectDelicacy}
+                  onNavigateTab={setActiveTab}
+                />
+              </div>
+            )}
+
             {activeTab === 'treats' && (
               <div className="bg-[#241a13] border-2 border-[#523c28] rounded-sm p-3 sm:p-6 md:p-8 shadow-2xl">
                 <TaiwanTreatsArchive onSelectDelicacy={handleSelectDelicacy} />
+              </div>
+            )}
+
+            {activeTab === 'map' && (
+              <div className="bg-[#241a13] border-2 border-[#523c28] rounded-sm p-3 sm:p-6 md:p-8 shadow-2xl">
+                <VintageTaipeiMap onSelectDelicacy={handleSelectDelicacy} />
               </div>
             )}
 
@@ -151,7 +184,12 @@ export default function App() {
         )}
       </main>
 
-      {/* 3. Detail Inspector Bottom Sheet / Modal */}
+      {/* 3. Bottom Antique Audio Player (19th-Century Classical BGM) */}
+      <div className="w-full pb-16 md:pb-3 px-2 sm:px-4 z-30 pointer-events-auto">
+        <AntiqueAudioPlayer />
+      </div>
+
+      {/* 4. Detail Inspector Bottom Sheet / Modal */}
       <AntiqueFolioModal
         selectedDelicacy={selectedDelicacy}
         selectedCompanion={selectedCompanion}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TAIWAN_DELICACIES, DIARY_IMAGES } from '../data/diaryData';
 import { TaiwanDelicacy } from '../types/diary';
+import { VintagePostageStamp } from './VintagePostageStamp';
 import { vintageAudio } from '../utils/audio';
 import { Sparkles, MapPin, Tag } from 'lucide-react';
 
@@ -36,14 +37,17 @@ export const TaiwanTreatsArchive: React.FC<TaiwanTreatsArchiveProps> = ({
           </p>
         </div>
 
-        {/* Decorative Archive Badge */}
-        <div className="border border-[#a38058] bg-[#f5e9d3] px-3 py-1.5 rounded-xs text-right shadow-2xs">
-          <span className="text-[10px] font-garamond uppercase text-[#885d39] tracking-wider block">
-            COLLECTION RECORD
-          </span>
-          <span className="text-xs font-batang font-bold text-[#422915]">
-            총 7선 수록 완료
-          </span>
+        {/* Decorative Archive Badge & Stamp */}
+        <div className="flex items-center gap-3">
+          <div className="border border-[#a38058] bg-[#f5e9d3] px-3 py-1.5 rounded-xs text-right shadow-2xs">
+            <span className="text-[10px] font-garamond uppercase text-[#885d39] tracking-wider block">
+              COLLECTION RECORD
+            </span>
+            <span className="text-xs font-batang font-bold text-[#422915]">
+              총 7선 수록 완료
+            </span>
+          </div>
+          <VintagePostageStamp size="sm" variant="red" postmarkDate="10.02" denomination="5 SEN" label="美食 郵便" rotate="rotate-[3deg]" className="hidden sm:inline-block" />
         </div>
       </div>
 

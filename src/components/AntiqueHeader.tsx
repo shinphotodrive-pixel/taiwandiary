@@ -44,8 +44,8 @@ export const AntiqueHeader: React.FC<AntiqueHeaderProps> = ({
           <span className="text-xs text-[#a28669] font-batang tracking-normal">10.02</span>
         </a>
 
-        {/* Zone 2: 4–6 nav links, 1–2 word labels, single-line (Desktop) */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-batang">
+        {/* Zone 2: 4–7 nav links, 1–2 word labels, single-line (Desktop) */}
+        <nav className="hidden md:flex items-center gap-4 lg:gap-5 xl:gap-6 text-sm font-batang">
           <button
             onClick={() => {
               setActiveTab('journal');
@@ -61,6 +61,19 @@ export const AntiqueHeader: React.FC<AntiqueHeaderProps> = ({
           </button>
           <button
             onClick={() => {
+              setActiveTab('itinerary');
+              vintageAudio.playPageTurn();
+            }}
+            className={`whitespace-nowrap transition-colors hover:underline cursor-pointer ${
+              activeTab === 'itinerary'
+                ? 'text-[#f5d7a6] font-bold underline underline-offset-4 decoration-[#b5834a]'
+                : 'text-[#baa186] hover:text-[#ebd8be]'
+            }`}
+          >
+            여정록
+          </button>
+          <button
+            onClick={() => {
               setActiveTab('treats');
               vintageAudio.playPageTurn();
             }}
@@ -71,6 +84,19 @@ export const AntiqueHeader: React.FC<AntiqueHeaderProps> = ({
             }`}
           >
             미식 도감
+          </button>
+          <button
+            onClick={() => {
+              setActiveTab('map');
+              vintageAudio.playPageTurn();
+            }}
+            className={`whitespace-nowrap transition-colors hover:underline cursor-pointer ${
+              activeTab === 'map'
+                ? 'text-[#f5d7a6] font-bold underline underline-offset-4 decoration-[#b5834a]'
+                : 'text-[#baa186] hover:text-[#ebd8be]'
+            }`}
+          >
+            고지도
           </button>
           <button
             onClick={() => {
